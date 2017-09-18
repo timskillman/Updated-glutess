@@ -1,13 +1,4 @@
-typedef struct Vertex {
-    double pt[3];
-    int index;
-    struct Vertex *prev;
-} Vertex;
+#pragma once
+#include <vector>
 
-void tessellate
-    (double **verts,
-     int *nverts,
-     int **tris,
-     int *ntris,
-     const double **contoursbegin, 
-     const double **contoursend);
+extern void tessellate(std::vector<float> &tris, std::vector<std::vector<float>> &contours);
