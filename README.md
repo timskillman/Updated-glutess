@@ -2,12 +2,12 @@
 
 Code based on Michael Labbe's rip of SGI's GLU tesselator (1994!).  All references to indexes removed and the interface simplified.
 
-Having attempted triangulation with several other tessellators such as poly2tri, this tessellator cracks all the edge cases
+Having attempted triangulation with several other tessellators, such as poly2tri, this tessellator cracks all the edge cases
 including self-intersecting polygons and holes without the need for special support libraries such as clipper.
 
 This tesselator is quite possibly the most versatile and robust triangulation code out there.  
 
-Soon to be converted to SDL2 as a general tesslator for all purposes.
+Soon to be converted to SDL2 as a general tessellator for all purposes.
 
 ## Original ReadMe below ... ##
 
