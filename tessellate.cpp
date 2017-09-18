@@ -119,11 +119,11 @@ void begin(GLenum which, void *poly_data)
     }
 }
 
-void tessellate (std::vector<float> &tris, std::vector<std::vector<float>> &contours)
+void tessellate (std::vector<std::vector<float>> &contours_in, std::vector<float> &tris_out)
 {
     struct Vertex_s *current_vertex;
     GLUtesselator *tess = gluNewTess();
-    struct TessContext_s *ctx = new_tess_context(&tris);
+    struct TessContext_s *ctx = new_tess_context(&tris_out);
 
     //gluTessProperty(tess, GLU_TESS_BOUNDARY_ONLY, GL_TRUE);
     gluTessProperty(tess, GLU_TESS_WINDING_RULE, GLU_TESS_WINDING_ODD);
@@ -132,8 +132,8 @@ void tessellate (std::vector<float> &tris, std::vector<std::vector<float>> &cont
     gluTessCallback(tess, GLU_TESS_COMBINE_DATA, (_GLUfuncptr) &combine);
 
     gluTessBeginPolygon(tess, ctx);
-    for (size_t c = 0; c < contours.size(); c++) {
-	std::vector<float> &contour = contours[c];
+    for (size_t c = 0; c < contours_in.size(); c++) {
+	std::vector<float> &contour = contours_in[c];
 	gluTessBeginContour(tess);
 	for (size_t v = 0; v < contour.size(); v += 2) {
 		current_vertex = new_vertex(ctx, (double)contour[v], (double)contour[v+1]);
