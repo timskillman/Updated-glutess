@@ -15,11 +15,13 @@ std::vector<float> createContour(std::string vals) {
 
 int main()
 {
+    //Create 3x contours including one that intersects the other ...
     std::vector<std::vector<float>> contours;
     contours.push_back(createContour("0 0 300 0 300 300 0 300"));
     contours.push_back(createContour("100 100 200 100 420 420 100 200"));
     contours.push_back(createContour("400 100 450 150 400 200 350 150"));
   
+    //Tessellate the contours into triangles and store the results in 'tris' array ...
     std::vector<float> tris;  /* store triangles in tris array - each triangle is 9 floats (3x XYZ) */
     tessellate(tris, contours);
   
