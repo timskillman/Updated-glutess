@@ -1,6 +1,6 @@
 # Simplified CPP version of tesselate.c #
 
-Code based on Michael Labbe's rip of SGI's GLU tesselator.  All references to indexes removed and the interface simplified.
+Code based on Michael Labbe's rip of SGI's GLU tesselator (1994!).  All references to indexes removed and the interface simplified.
 
 Having attempted triangulation with several other tessellators such as poly2tri, this tessellator cracks all the edge cases
 including self-intersecting polygons and holes without the need for special support libraries such as clipper.
