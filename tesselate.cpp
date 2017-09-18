@@ -3,7 +3,6 @@
 #include "tess.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL.h>
 
 struct Triangle_s {
 	double ax, ay, bx, by, cx, cy;
@@ -115,7 +114,7 @@ void begin(GLenum which, void *poly_data)
 	case GL_TRIANGLE_STRIP: ctx->vertex_cb = &strip_vertex; break;
 	case GL_TRIANGLE_FAN: ctx->vertex_cb = &fan_vertex; break;
 	default:
-		SDL_Log("ERROR, can't handle %d\n", (int)which);
+		//SDL_Log("ERROR, can't handle %d\n", (int)which);
 		ctx->vertex_cb = &skip_vertex;
 	}
 }
