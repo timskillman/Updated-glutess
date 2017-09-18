@@ -23,7 +23,7 @@ int main()
   //Tessellate the contours into triangles and store the results in 'tris' array ...
 	
     std::vector<float> tris;  /* store triangles in tris array - each triangle is 9 floats (3x XYZ) */
-    tessellate(tris, contours);
+    tessellate(contours, tris);
   
   // Setup for rendering ...
   
