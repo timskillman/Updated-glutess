@@ -1,4 +1,4 @@
-# Simplified CPP version of tesselate.c #
+# Simplified CPP version of tesselate.c (now tessellate.cpp)#
 
 Code based on Michael Labbe's rip of SGI's GLU tesselator (1994!).  All references to indexes removed and the interface simplified.
 
