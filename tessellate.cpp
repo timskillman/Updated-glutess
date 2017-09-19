@@ -90,6 +90,7 @@ void triangle_vertex(struct Vertex_s *v, struct TessContext_s *ctx) {
     case 2:ctx->bx = v->pt[0]; ctx->by = v->pt[1]; return;
     }
     new_tri(ctx->tripoints, ctx->ax, ctx->ay, ctx->bx, ctx->by, v->pt[0], v->pt[1]);
+    ctx->pointCount = 0;
 }
 
 void vertex(void *vertex_data, void *poly_data)
